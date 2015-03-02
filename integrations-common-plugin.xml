@@ -1,0 +1,9 @@
+<plugin
+	name="integrations-common"
+	package="wbs.integrations.common">
+
+	<fixtures>
+		<fixture name="integrationsCommon"/>
+	</fixtures>
+
+</plugin>
