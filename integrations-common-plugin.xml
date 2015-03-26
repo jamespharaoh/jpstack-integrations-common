@@ -2,6 +2,10 @@
 	name="integrations-common"
 	package="wbs.integrations.common">
 
+	<plugin-dependencies>
+		<plugin-dependency name="scaffold"/>
+	</plugin-dependencies>
+
 	<fixtures>
 		<fixture name="integrationsCommon"/>
 	</fixtures>
