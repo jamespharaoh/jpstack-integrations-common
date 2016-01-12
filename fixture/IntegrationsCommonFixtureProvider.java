@@ -48,7 +48,7 @@ class IntegrationsCommonFixtureProvider
 				"Integrations")
 
 			.setOrder (
-				60)
+				60l)
 
 		);
 
