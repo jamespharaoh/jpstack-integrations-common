@@ -5,7 +5,7 @@ import lombok.NonNull;
 import wbs.framework.component.annotations.ClassSingletonDependency;
 import wbs.framework.component.annotations.PrototypeComponent;
 import wbs.framework.component.annotations.SingletonDependency;
-import wbs.framework.database.Transaction;
+import wbs.framework.database.OwnedTransaction;
 import wbs.framework.entity.record.GlobalId;
 import wbs.framework.fixtures.FixtureProvider;
 import wbs.framework.logging.LogContext;
@@ -36,38 +36,44 @@ class IntegrationsCommonFixtureProvider
 	public
 	void createFixtures (
 			@NonNull TaskLogger parentTaskLogger,
-			@NonNull Transaction transaction) {
+			@NonNull OwnedTransaction transaction) {
 
-		TaskLogger taskLogger =
-			logContext.nestTaskLogger (
-				parentTaskLogger,
-				"createFixtures");
+		try (
 
-		menuGroupHelper.insert (
-			taskLogger,
-			menuGroupHelper.createInstance ()
+			TaskLogger taskLogger =
+				logContext.nestTaskLogger (
+					parentTaskLogger,
+					"createFixtures");
 
-			.setSlice (
-				sliceHelper.findByCodeRequired (
-					GlobalId.root,
-					"test"))
+		) {
 
-			.setCode (
-				"integration")
+			menuGroupHelper.insert (
+				taskLogger,
+				menuGroupHelper.createInstance ()
 
-			.setName (
-				"Integration")
+				.setSlice (
+					sliceHelper.findByCodeRequired (
+						GlobalId.root,
+						"test"))
 
-			.setDescription (
-				"")
+				.setCode (
+					"integration")
 
-			.setLabel (
-				"Integrations")
+				.setName (
+					"Integration")
 
-			.setOrder (
-				60l)
+				.setDescription (
+					"")
 
-		);
+				.setLabel (
+					"Integrations")
+
+				.setOrder (
+					60l)
+
+			);
+
+		}
 
 	}
 
