@@ -3,7 +3,7 @@
 	package="wbs.integrations.common">
 
 	<plugin-dependencies>
-		<plugin-dependency name="scaffold"/>
+		<plugin-dependency name="platform-scaffold"/>
 	</plugin-dependencies>
 
 	<fixtures>
