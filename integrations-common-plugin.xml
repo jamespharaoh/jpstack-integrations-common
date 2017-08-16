@@ -7,7 +7,7 @@
 	</plugin-dependencies>
 
 	<fixtures>
-		<fixture name="integrationsCommon"/>
+		<fixture name="integrations-common"/>
 	</fixtures>
 
 </plugin>
